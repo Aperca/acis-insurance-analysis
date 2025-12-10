@@ -1,0 +1,30 @@
+# Data files - will use DVC
+data/raw/
+data/processed/
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+.env
+.venv
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large files
+*.txt
+*.csv
+*.parquet
+*.pkl
+*.feather
