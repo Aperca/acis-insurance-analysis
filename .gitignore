@@ -1,8 +1,8 @@
-# Data files - will use DVC
-data/raw/
-data/processed/
-!data/raw/.gitkeep
-!data/processed/.gitkeep
+# Data directories - but allow .dvc files
+data/raw/*
+!data/raw/*.dvc
+data/processed/*
+!data/processed/*.dvc
 
 # Python
 __pycache__/
@@ -22,9 +22,9 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Large files
-*.txt
-*.csv
-*.parquet
-*.pkl
-*.feather
+# Exclude notebooks content but keep the directory
+notebooks/*
+!notebooks/*.ipynb
+
+# Virtual environment
+venv/
