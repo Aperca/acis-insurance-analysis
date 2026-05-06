@@ -1,144 +1,48 @@
-# ACIS Insurance Analytics Project
+# Insurance Risk Analytics & Pricing Model
 
-## 📊 Project Overview
-Comprehensive analysis of insurance claim data for AlphaCare Insurance Solutions to optimize marketing strategy and identify low-risk targets for premium reduction.
+## Overview
+This project analyzes insurance claims data to identify risk patterns and support data-driven pricing decisions. It combines statistical analysis and machine learning to better understand how risk varies across different segments and how pricing strategies can be improved.
 
-### 🎯 Business Objectives
-1. Analyze historical insurance claim data (Feb 2014 - Aug 2015)
-2. Identify "low-risk" targets for premium reduction
-3. Develop predictive models for optimal premium pricing
-4. Provide data-driven recommendations for marketing strategy
+## Problem
+Insurance systems rely on accurate risk assessment, but real-world data often contains hidden patterns, imbalances, and inconsistencies that make pricing decisions difficult.
 
-## 📁 Project Structure
-acis-insurance-analysis/
-├── data/
-│ ├── raw/ # Original data (managed by DVC)
-│ └── processed/ # Cleaned and transformed data
-├── notebooks/
-│ ├── 01_basic_eda.ipynb # Exploratory Data Analysis
-│ ├── 02_hypothesis_testing.ipynb # A/B Testing
-│ └── 03_machine_learning.ipynb # ML Models
-├── scripts/
-│ ├── 01_eda_basic.py # EDA scripts
-│ └── create_pdf.py # Report generation
-├── reports/
-│ ├── figures/ # Visualizations
-│ ├── final/ # Final reports (PDF & Markdown)
-│ └── *.png # Analysis charts
-├── requirements.txt # Python dependencies
-├── .gitignore # Git ignore rules
-└── README.md # This file
+This project explores how data analysis and predictive modeling can help identify low-risk segments, reduce losses, and improve pricing strategies.
 
-text
+## Approach
+- Performed data cleaning and exploratory data analysis (EDA)
+- Analyzed claim frequency, severity, and loss ratios across regions
+- Applied statistical testing to evaluate differences between groups
+- Built predictive models (Random Forest, Gradient Boosting) for premium estimation
+- Interpreted model outputs to support decision-making
 
-## 🚀 Key Findings
+## Key Findings
+- The portfolio shows signs of imbalance, with loss ratios indicating higher payouts than premiums in some segments
+- A significant portion of policies have zero premiums, suggesting data or pricing inconsistencies
+- Claims are rare but high-impact, creating risk concentration challenges
+- Risk varies significantly across geographic regions
 
-### 🔍 Critical Business Insights
-1. **Portfolio is unprofitable**: Loss Ratio = 1.048 (paying out more than earning)
-2. **Major revenue leak**: 38% of policies (381,634) have zero premium
-3. **Rare but catastrophic claims**: 99.6% policies have zero claims, but when claims occur, they average 82x the premium
-4. **Geographic risk variations**: Significant differences across provinces and zipcodes
+## Tech Stack
+- Python (Pandas, NumPy, scikit-learn)
+- StatsModels, SciPy
+- Data visualization (Matplotlib, Seaborn)
+- DVC for dataset management
 
-### 📈 Statistical Results
-- **Highest risk province**: Gauteng (LR = 1.163)
-- **Lowest risk province**: Northern Cape (LR = 0.283)
-- **High-risk zipcodes**: 302, 1863, 1022 (Loss Ratio > 70)
-- **ML Model Performance**: Gradient Boosting achieved R² = 0.425 for premium prediction
+## Results
+- Built predictive models to support premium optimization (R² ≈ 0.42)
+- Identified key factors influencing insurance risk
+- Generated insights for improving pricing strategies and reducing loss ratios
 
-## 🛠️ Technologies Used
-- **Python**: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
-- **Data Version Control**: DVC for large dataset management
-- **Statistical Analysis**: SciPy, StatsModels
-- **Visualization**: Plotly, Seaborn
-- **Version Control**: Git, GitHub
+## Impact
+This project demonstrates how data-driven approaches can support more reliable and transparent insurance systems by:
+- improving risk assessment  
+- enabling more consistent pricing decisions  
+- supporting data-informed business strategies  
 
-## 📋 Tasks Completed
+## Limitations
+- Model performance depends on dataset quality and feature availability  
+- Not designed for real-time or production deployment  
 
-### ✅ Task 1: Git & EDA
-- Created GitHub repository with proper branching
-- Performed comprehensive Exploratory Data Analysis
-- Created 3+ creative visualizations
-- Identified data quality issues and outliers
-
-### ✅ Task 2: Data Version Control (DVC)
-- Installed and configured DVC
-- Set up local remote storage
-- Added 504MB insurance data to DVC tracking
-- Established reproducible data pipeline
-
-### ✅ Task 3: A/B Testing & Machine Learning
-- **Hypothesis Testing**: Tested 4 key hypotheses about risk differences
-- **Statistical Modeling**: Linear regression per zipcode
-- **Machine Learning**: Random Forest and Gradient Boosting models
-- **Premium Optimization**: Developed model to suggest optimal premiums
-
-### ✅ Task 4: Final Report
-- Created Medium-style narrative report
-- Generated professional PDF documentation
-- Provided actionable business recommendations
-- Prepared executive summary
-
-## 📄 Reports Generated
-1. **Medium-Style Article**: `reports/final/acis_insurance_report.pdf`
-2. **Technical Report**: `reports/final/acis_insurance_analysis_report.md`
-3. **Executive Summary**: `reports/final/executive_summary.md`
-
-## 🚀 Getting Started
-
-### Prerequisites
-```bash
-python>=3.8
-pip install -r requirements.txt
-Installation
-bash
-# Clone repository
-git clone https://github.com/Aperca/acis-insurance-analysis.git
-cd acis-insurance-analysis
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set up DVC (for data management)
-dvc pull  # Downloads the data from DVC remote
-Running Analysis
-python
-# Open Jupyter notebooks
-jupyter notebook notebooks/
-
-# Or run specific scripts
-python scripts/01_eda_basic.py
-python scripts/create_pdf.py
-📊 Key Visualizations
-Loss Ratio by Province
-
-Claim Distribution Analysis
-
-Geographic Risk Heatmaps
-
-Feature Importance Charts
-
-Premium Adjustment Recommendations
-
-💡 Business Recommendations
-Immediate: Audit and fix zero-premium policies
-
-Short-term: Implement risk-based pricing adjustments
-
-Medium-term: Develop geographic pricing tiers
-
-Long-term: Build real-time pricing engine with ML
-
-📈 Expected Impact
-Loss Ratio Improvement: 1.048 → 0.85 (19% improvement)
-
-Revenue Leakage Reduction: 38% → 5%
-
-Customer Acquisition: +15% through targeted pricing
-
-
-Repository: https://github.com/Aperca/acis-insurance-analysis
-Last Updated: $(date +"%Y-%m-%d")
+## Future Improvements
+- Incorporate larger and more diverse datasets  
+- Improve model performance with advanced techniques  
+- Develop a deployable decision-support system for pricing
